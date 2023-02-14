@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <title>Calculator</title>
+    <meta charset ="utf-8">
+    <link rel=""s
+</head>
+<body>
+    <form id="TriangleForm" onsubmit="return false">
+    <h2>Hypotenuse of a Right Triangle</h2>
+        <label for="leg1" class="formlabel">Operand1:</label>
+        <input type="text" id="leg1" name="leg1"
+               data-rule-required="true"  data-msg-required="Leg1 is Required" 
+               data-rule-number="true" data-msg-number="Leg1 must be floating point number"
+               data-rule-min="0" data-msg-min="Leg1 must be greater than zero">
+        <label for="leg1" class="error" id="leg1error"></label>
+        <br>
+        <form id="RadioExampleValidationCheckForm" onsubmit="return false"> 
+            
+            <label>Operator: </label>
+            <label for="rdChevrolet"><input type="radio" id="rdChevrolet" name="rdcar" value="Chevrolet" 
+                data-rule-required="true" data-msg-required="Car is Required" />+</label>
+            <label for="rdFord"><input type="radio" id="rdFord" name="rdcar" value="Ford" />-</label>
+            <label for="rdDodge"><input type="radio" id="rdDodge" name="rdcar" value="Dodge" />*</label>
+            <label for="rdDivide"><input type="radio" id="rdDivide" name="rdcalc" value="Divide"/> / </label>
+            <label for="rdcar" class="error"></label>
+            <span id="RadioExampleValue"></span>
+            <br>
+            </form>
+
+        <label for="leg2" class="formlabel">Operand2:</label>
+        <input type="text" id="leg2" name="leg2"
+               data-rule-required="true"  data-msg-required="Leg2 is Required" 
+               data-rule-number="true" data-msg-number="Leg2 must be floating point number"
+               data-rule-min="0" data-msg-min="Leg2 must be greater than zero">
+        <label for="leg2" class="error" id="leg2error"></label>
+        <br><br>
+
+        <label for="hypotenuse" class="formlabel">Result:</label>
+        <span id="hypotenuse"></span>
+        <br><br>
+        <input type="submit" value="Calculate" id="btnCalc" onclick="displayHypotenuse()">
+        <input type="submit" value="Clear" id="btnClear" onclick="clearForm()" formnovalidate>
+    </form>
+</body>
