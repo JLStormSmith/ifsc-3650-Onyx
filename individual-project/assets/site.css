@@ -9,6 +9,14 @@ head{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
+body {
+    color:#000;
+}
+
+img {
+    height: 250px;
+    width: 100%;
+}
 /*This alters the text in the content*/
 p{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
