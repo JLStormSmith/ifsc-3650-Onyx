@@ -1,0 +1,60 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+<style>
+   .error {
+        color: red;
+        padding-left: 5px;
+   }
+</style>
+<form id="SelectExampleDOMForm" onsubmit="return false">
+
+<label>Base Currency: </label>
+<select name="selAuto" id="Auto"                
+        data-rule-required="true" data-msg-required="Auto is Required">
+    <option value="">Select an Auto...</option>
+    <option value="Volvo">Volvo (Latin for 'I roll')</option>
+    <option value="Saab">Saab (Swedish Aeroplane AB)</option>
+    <option value="Mercedes">Mercedes (Mercedes-Benz)</option>
+    <option value="Audi">Audi (Auto Union Deutschland Ingolstadt)</option>
+</select>
+<br> </br>
+<label>Convert to Currency:  </label>
+<select name="selAuto" id="Auto"                
+        data-rule-required="true" data-msg-required="Auto is Required">
+    <option value="">Select an Auto...</option>
+    <option value="Volvo">Volvo (Latin for 'I roll')</option>
+    <option value="Saab">Saab (Swedish Aeroplane AB)</option>
+    <option value="Mercedes">Mercedes (Mercedes-Benz)</option>
+    <option value="Audi">Audi (Auto Union Deutschland Ingolstadt)</option>
+</select>
+<label for="selAuto" class="error"></label>
+<br>
+<br>
+<label>From Date: </label>
+<span id="SelectExampleValue"></span>
+<input type="text" id="txtName" name="txtName" size="20" maxlength="20"
+    data-rule-required="true"  data-msg-required="Name is Required" >
+<label for="txtName" class="error"></label>
+<label id="SubmitExampleValue"></label>
+<br>
+<br>
+<label>To Date: </label>
+<input type="text" id="txtName" name="txtName" size="20" maxlength="20"
+    data-rule-required="true"  data-msg-required="Name is Required" >
+<label for="txtName" class="error"></label>
+<label id="SubmitExampleValue"></label>
+<br>
+<input type="submit" value="SelectExample" name="SelectButton" onclick="SelectExample()">
+<input type="submit" value="SelectExample" name="SelectButton" onclick="SelectExample()">
+<script>
+function SelectExample() 
+{
+    document.getElementById("SelectExampleValue").innerHTML = document.getElementById("selAuto").value;
+}
+$( "#SelectExampleDOMForm" ).validate({
+
+});
+
+</script>
+</form>
