@@ -5,22 +5,31 @@ function calculate() {
         document.getElementById("oper2").innterHTML = "";
 
     
-    if (document.getElementById("rdChevrolet").checked) {
+    if (document.getElementById("rdPlus").checked) {
         document.getElementById("RadioExampleValue").innerHTML = 
-            document.getElementById("rdChevrolet").value;
+            document.getElementById("rdPlus").value;
     }
-    if (document.getElementById("rdFord").checked) {
+    if (document.getElementById("rdMin").checked) {
         document.getElementById("RadioExampleValue").innerHTML = 
-            document.getElementById("rdFord").value;
+            document.getElementById("rdMin").value;
     }
-    if (document.getElementById("rdDodge").checked) {
+    if (document.getElementById("rdMult").checked) {
         document.getElementById("RadioExampleValue").innerHTML = 
-            document.getElementById("rdDodge").value;
+            document.getElementById("rdMult").value;
     }
-    if (document.getElementById("rdDodge").checked) {
+    if (document.getElementById("rdDiv").checked) {
         document.getElementById("RadioExampleValue").innerHTML = 
-            document.getElementById("rdDodge").value;
+            document.getElementById("rdDiv").value;
     }
+
+    var oper1;
+    var oper2;
+
+    var rdPlus;
+    var rdMin;
+    var rdMult;
+    var rdDiv;
+    var result;
 }
 }
 
@@ -31,9 +40,9 @@ document.getElementById("Operand2").value = "";
 document.getElementById("oper2").value = "";
 document.getElementById("oper1").innerHTML = "";
 document.getElementById("oper2").innerHTML = "";
+document.getElementById("Operand1").innerHTML = "";
 document.getElementById("Operand2Error").innerHTML = "";
-document.getElementById("MinOperator").checked = false;
-document.getElementById("MaxOperator").checked = false;
+document.getElementById("rdMin").innterHTML=""
 document.getElementById("AvgOperator").checked = false;
 document.getElementById("OperatorError").innerHTML = "";
 document.getElementById("Result").innerHTML = "";
