@@ -1,7 +1,13 @@
+$("#myform").validate({
+
+}); 
+
+
 
 function calculate() {
     if ($("#myform").valid()){
         document.getElementById("oper1").innterHTML = "";
+        
         document.getElementById("oper2").innterHTML = "";
 
     
@@ -32,6 +38,8 @@ function calculate() {
     var result;
 }
 }
+
+
 
 function clearForm(){
 /* Clears the whole screen and sets all the boxes to blank */
