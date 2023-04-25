@@ -13,40 +13,45 @@
 <body>
     <form id="CalcForm" onsubmit="return false">
     <h2>Calculate </h2>
-        <label for="oper1" class="formlabel">Operand 1:</label>
-        <input type="text" id="oper1" name="oper1"
-               data-rule-required="true"  data-msg-required="Operand 1 is Required" 
-               data-rule-number="true" data-msg-number="Operand 1 must be floating point number"
-               data-rule-min="0" data-msg-min="Operand 1 must be greater than zero">
-        <label for="oper1" class="error" id="oper1error"></label>
-        <br>
-        <form id="RadioExampleValidationCheckForm" onsubmit="return false"> 
-            
-            <label>Operator: </label>
-            <label for="rdPlus"><input type="radio" id="rdPlus" name="rdcar" value="Chevrolet" 
-                data-rule-required="true" data-msg-required="Operator is Required" />+</label>
-            <label for="rdMin"><input type="radio" id="rdFord" name="rdcar" value="Ford" />-</label>
-            <label for="rdMult"><input type="radio" id="rdDodge" name="rdcar" value="Multiply" />*</label>
-            <label for="rdDiv"><input type="radio" id="rdDivide" name="rdcalc" value="Divide"/> / </label>
-            <label for="rdcar" class="error"></label>
-            <span id="RadioExampleValue"></span>
-            <br>
-            </form>
+    <label class="formlabel" for="Operand1">Operand 1: </label>
+    <input type="text" id="Operand1" name="Operand1" size="15" maxlength="15"
+            data-rule-required="true"  data-msg-required="Operand 1 is Required" 
+            data-rule-number="true" data-msg-number="Operand 1 must be a Number">
+    <label for="Operand1" class="error" id="Operand1Msg"></label>
+    <br><br>
 
-        <label for="oper2" class="formlabel">Operand 2:</label>
-        <input type="text" id="oper2" name="oper2"
-               data-rule-required="true"  data-msg-required="Operand 2 is Required" 
-               data-rule-number="true" data-msg-number="Operand 2 must be floating point number"
-               data-rule-min="0" data-msg-min="Operand 2 must be greater than zero">
-        <label for="oper2" class="error" id="oper2error"></label>
-        <br><br>
+    <label class="formlabel">Operator: </label>
+        <label for="AddOperator">
+            <input type="radio" name="Operator" id="AddOperator" value = "+"
+                   data-rule-required="true" data-msg-required="Operator is Required" />+
+        </label>
+        <label for="AddOperator">
+            <input type="radio" name="Operator" id="SubtractOperator" value = "-">-
+        </label>
+        <label for="AddOperator">
+            <input type="radio" name="Operator" id="MultiplyOperator" value = "*">*
+        </label>
+        <label for="AddOperator">
+            <input type="radio" name="Operator" id="DivideOperator" value = "/">/
+        </label>
+    <label for="Operator" class="error" id="OperatorMsg"></label>
+    <span id="RadioOperatorValue"></span>
+    <br><br>
 
-        <label for="result" class="formlabel">Result:</label>
-        <span id="result"></span>
-        <br><br>
-        <input type="submit" value="Calculate" id="btnCalc" onclick="displayResult()">
-        <input type="submit" value="Clear" id="btnClear" onclick="clearForm()" formnovalidate>
-    </form>
+    <label class="formlabel" for="Operand2">Operand 2: </label>
+    <input type="text" id="Operand2" name="Operand2" size="15" maxlength="15"
+            data-rule-required="true"  data-msg-required="Operand 2 is Required" 
+            data-rule-number="true" data-msg-number="Operand 2 must be a Number">
+    <label for="Operand2" class="error" id="Operand2Msg"></label>
+    <br><br>
+
+    <label class="formlabel">Result: </label>
+    <span id="Result"></span>
+    <br><br>
+
+    <input type="button" value="Calculate" name="Calculate" onclick="calculate();">
+    <input type="button" value="Clear" name="Clear" onclick="clearform();">
+
 
 </body>
 

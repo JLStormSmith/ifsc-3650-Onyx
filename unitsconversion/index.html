@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Circle Calculations</title>
+    <title>Unit Conversion</title>
     <meta charset ="utf-8"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
     <script src="/unitsconversion/script/unit.js"></script>
 
-<!-- The following should be a file in the "style" folder -->
-    <style>
-    .formlabel {
-        display: inline-block;
-        width: 200px;
-        text-align: right;
-        padding: 5px;
-        font-weight: bold;
-    }
 
-    .error {
-        color: red;
-        padding-left: 5px;
-    }
-    </style>
+    
 </head>
 <body>
-
+<h2> Unit Converter</h2>
+<label class="formlabel">From Value</label>
+<input type="text" id="Operand1" name="Operand1" size="15" maxlength="15"
+            data-rule-required="true"  data-msg-required="Value is Required" 
+            data-rule-number="true" data-msg-number="Value must be a Number">
+    <label for="Operand1" class="error" id="Operand1Msg"></label>
+    <br><br>
+<label class="formlabel">From Unit: </label>
+<label for="AddOperator">
+            <input type="radio" name="Operator" id="AddOperator" value = "+"
+                   data-rule-required="true" data-msg-required="Operator is Required" />+
+        </label>
+        <label for="AddOperator">
+            <input type="radio" name="Operator" id="SubtractOperator" value = "-">-
+        </label>
+        <label for="AddOperator">
+            <input type="radio" name="Operator" id="MultiplyOperator" value = "*">*
+        </label>
+        <label for="AddOperator">
+            <input type="radio" name="Operator" id="DivideOperator" value = "/">/
+        </label>
+<br> <br>
+<label class="formlabel">To Unit: </label>
+<label for="AddOperator">
+    <input type="radio" name="Operator" id="AddOperator" value = "+"
+           data-rule-required="true" data-msg-required="Operator is Required" />+
+</label>
+<label for="AddOperator">
+    <input type="radio" name="Operator" id="SubtractOperator" value = "-">-
+</label>
+<label for="AddOperator">
+    <input type="radio" name="Operator" id="MultiplyOperator" value = "*">*
+</label>
+<label for="AddOperator">
+    <input type="radio" name="Operator" id="DivideOperator" value = "/">/
+</label>
 </body>
 </html>
