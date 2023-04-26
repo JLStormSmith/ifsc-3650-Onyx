@@ -1,45 +1,50 @@
-$("#myform").validate({
-
-}); 
-
-
 
 function calculate() {
-    if ($("#myform").valid()){
-        document.getElementById("oper1").innterHTML = "";
+    if ($("#calcform").valid()){
+
+        //gets the operands
+        var operand1 = document.getElementById("Operand1").value;
+        var operand2 = document.getElementById("Operand2").value;
         
-        document.getElementById("oper2").innterHTML = "";
+        var operand1fp = parseFloat (operand1);
+        var operand2fp = parseFloat (operand2);
+        
+        var operator;
+        if (document.getElementById("AddOperator").checked) {
+            operator = document.gettElementById("AddOperator").value;
+        }
+        if (document.getElementById("SubtractOperator").checked) {
+            operator = document.gettElementById("SubtractOperator").value;
+        }
+        if (document.getElementById("MultiplyOperator").checked) {
+            operator = document.gettElementById("MultiplyOperator").value;
+        }
+        if (document.getElementById("DivideOperator").checked) {
+            operator = document.gettElementById("DivideOperator").value;
+        }
+        var result;
+//calculate the operators
+        if (operator == "+"){
+           result = operand1fp + operand2fp;
 
-    
-    if (document.getElementById("rdPlus").checked) {
-        document.getElementById("RadioExampleValue").innerHTML = 
-            document.getElementById("rdPlus").value;
-    }
-    if (document.getElementById("rdMin").checked) {
-        document.getElementById("RadioExampleValue").innerHTML = 
-            document.getElementById("rdMin").value;
-    }
-    if (document.getElementById("rdMult").checked) {
-        document.getElementById("RadioExampleValue").innerHTML = 
-            document.getElementById("rdMult").value;
-    }
-    if (document.getElementById("rdDiv").checked) {
-        document.getElementById("RadioExampleValue").innerHTML = 
-            document.getElementById("rdDiv").value;
-    }
+        }
+        if (operator == "-"){
+           result = operand1fp - operand2fp;
 
-    var oper1;
-    var oper2;
+        }
+        if (operator == "*"){
+           result = operand1fp * operand2fp;
 
-    var rdPlus;
-    var rdMin;
-    var rdMult;
-    var rdDiv;
-    var result;
+        }
+        if (operator == "/"){
+            result = operand1fp / operand2fp;
+
+        }
+        document.getElementById("Result").innterHTML = result.toString();
+
+
 }
 }
-
-
 
 function clearForm(){
 /* Clears the whole screen and sets all the boxes to blank */
@@ -55,6 +60,7 @@ document.getElementById("Operand1").value = "";
     document.getElementById("Result").innerHTML = "";
 }
 /* This should validate the form */
-$( "#RadioExampleValidationCheckForm" ).validate({
 
-});
+$("#calcForm").validate({
+
+}); 

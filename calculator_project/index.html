@@ -11,7 +11,7 @@
 <script src="assets/script/calc.js"></script>
 </head>
 <body>
-    <form id="CalcForm" onsubmit="return false">
+    <form id="calcForm" onsubmit="return false">
     <h2>Calculate </h2>
     <label class="formlabel" for="Operand1">Operand 1: </label>
     <input type="text" id="Operand1" name="Operand1" size="15" maxlength="15"
@@ -25,13 +25,13 @@
             <input type="radio" name="Operator" id="AddOperator" value = "+"
                    data-rule-required="true" data-msg-required="Operator is Required" />+
         </label>
-        <label for="AddOperator">
+        <label for="SubtractOperator">
             <input type="radio" name="Operator" id="SubtractOperator" value = "-">-
         </label>
-        <label for="AddOperator">
+        <label for="MultiplyOperator">
             <input type="radio" name="Operator" id="MultiplyOperator" value = "*">*
         </label>
-        <label for="AddOperator">
+        <label for="DivideOperator">
             <input type="radio" name="Operator" id="DivideOperator" value = "/">/
         </label>
     <label for="Operator" class="error" id="OperatorMsg"></label>
@@ -49,8 +49,8 @@
     <span id="Result"></span>
     <br><br>
 
-    <input type="button" value="Calculate" name="Calculate" onclick="calculate();">
-    <input type="button" value="Clear" name="Clear" onclick="clearform();">
+    <input type="button" value="Calculate" id="btnSubmit" name="Calculate" onclick="calculate()">
+    <input type="button" value="Clear" id="btnSubmit" name="Clear" onclick="clearform()" formnovalidate>
 
 
 </body>
