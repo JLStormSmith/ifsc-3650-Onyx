@@ -5,7 +5,12 @@ async function ShowResuts(){
     var form =$("#myform");
 
     //validation 
-    form.validate
+    form.validate();
+
+    if (form.valid()){
+
+        
+    }
 
 }
 function SelectExample() 
