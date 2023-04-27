@@ -1,36 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     
-</html>
+
+<head>
+<meta charset ="utf-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+<script src="/currency_value_history/script/calc.js"></script>
 <style>
    .error {
         color: red;
         padding-left: 5px;
    }
 </style>
-<form id="SelectExampleDOMForm" onsubmit="return false">
-
+</head>
+<form id="myform" onsubmit="return false">
+<body>
+    <h2>Currency Value History </h2>
 <label>Base Currency: </label>
-<select name="selAuto" id="Auto"                
-        data-rule-required="true" data-msg-required="Auto is Required">
-    <option value="">Select an Auto...</option>
-    <option value="Volvo">Volvo (Latin for 'I roll')</option>
-    <option value="Saab">Saab (Swedish Aeroplane AB)</option>
-    <option value="Mercedes">Mercedes (Mercedes-Benz)</option>
-    <option value="Audi">Audi (Auto Union Deutschland Ingolstadt)</option>
+<select name="selCurrency" id="Currency"                
+        data-rule-required="true" data-msg-required="Currency is Required">
+    <option value="">Select a Currency...</option>
+    <option value="USD">USD </option>
+    <option value="Yen">Yen</option>
+    <option value="Pound">Pound </option>
+    <option value="Euro">Euro </option>
+    <option value="Pesos">Pesos </option>
 </select>
 <br> </br>
 <label>Convert to Currency:  </label>
-<select name="selAuto" id="Auto"                
-        data-rule-required="true" data-msg-required="Auto is Required">
-    <option value="">Select an Auto...</option>
-    <option value="Volvo">Volvo (Latin for 'I roll')</option>
-    <option value="Saab">Saab (Swedish Aeroplane AB)</option>
-    <option value="Mercedes">Mercedes (Mercedes-Benz)</option>
-    <option value="Audi">Audi (Auto Union Deutschland Ingolstadt)</option>
+<select name="selCurrency" id="Currency"                
+        data-rule-required="true" data-msg-required="Currency is Required">
+    <option value="">Select a Currency...</option>
+    <option value="USD">USD </option>
+    <option value="Yen">Yen</option>
+    <option value="Pound">Pound </option>
+    <option value="Euro">Euro </option>
+    <option value="Pesos">Pesos </option>
 </select>
 <label for="selAuto" class="error"></label>
 <br>
@@ -38,27 +45,24 @@
 <label>From Date: </label>
 <span id="SelectExampleValue"></span>
 <input type="text" id="txtName" name="txtName" size="20" maxlength="20"
-    data-rule-required="true"  data-msg-required="Name is Required" >
+    data-rule-required="true"  data-msg-required="From Date is Required" >
 <label for="txtName" class="error"></label>
-<label id="SubmitExampleValue"></label>
+<label id="DateValue"></label>
 <br>
 <br>
 <label>To Date: </label>
 <input type="text" id="txtName" name="txtName" size="20" maxlength="20"
-    data-rule-required="true"  data-msg-required="Name is Required" >
+    data-rule-required="true"  data-msg-required="To Date is Required" >
 <label for="txtName" class="error"></label>
-<label id="SubmitExampleValue"></label>
-<br>
-<input type="submit" value="SelectExample" name="SelectButton" onclick="SelectExample()">
-<input type="submit" value="SelectExample" name="SelectButton" onclick="SelectExample()">
-<script>
-function SelectExample() 
-{
-    document.getElementById("SelectExampleValue").innerHTML = document.getElementById("selAuto").value;
-}
-$( "#SelectExampleDOMForm" ).validate({
+<label id="DateValue"></label>
+<br><br>
+<input type="submit" value="Show Results" name="ShowResults" onclick="ShowResults()">
+<input type="button" value="Clear" id="btnSubmit" name="Clear" onclick="clearform()" formnovalidate>
 
-});
-
-</script>
 </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+<script src="/currency_value_history/script/calc.js"></script>
+</body>
+</html>

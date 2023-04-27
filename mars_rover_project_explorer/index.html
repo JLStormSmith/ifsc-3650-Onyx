@@ -15,14 +15,14 @@
 
     <h2> Select a rover and a picture date: </h2>
     <label class="formlabel">Rover:  </label>
-<label for="AddOperator">
-            <input type="radio" name="Operator" id="AddOperator" value = "+"
-                   data-rule-required="true" data-msg-required="Operator is Required" />Curiosity
+<label for="RoverUnit">
+            <input type="radio" name="RoverUnit" id="CuriosityRoverUnit" value = "curiosity"
+                   data-rule-required="true" data-msg-required="Rover is Required" />Curiosity
         </label>
-        <label for="AddOperator">
-            <input type="radio" name="Operator" id="SubtractOperator" value = "-">Opportunity
+        <label for="RoverUnit">
+            <input type="radio" name="Operator" id="OpportunityRoverUnit" value = "opportunity">Opportunity
         </label>
-        <label for="AddOperator">
+        <label for="RoverUnit">
             <input type="radio" name="Operator" id="MultiplyOperator" value = "*">Spirit
         </label>
 <br> <br>
@@ -34,6 +34,6 @@
     <label for="Operand2" class="error" id="Operand2Msg"></label>
 <br> <br>
 
-        <input type="button" value="Calculate" name="Calculate" onclick="calculate();">
+        <input type="button" value="Search" name="Search" onclick="search();">
     <input type="button" value="Clear" name="Clear" onclick="clearform();">
 </body>

@@ -20,18 +20,27 @@
     <label for="Operand1" class="error" id="Operand1Msg"></label>
     <br><br>
 <label class="formlabel">From Unit: </label>
-<label for="AddOperator">
-            <input type="radio" name="Operator" id="AddOperator" value = "+"
-                   data-rule-required="true" data-msg-required="Operator is Required" />+
+<label for="FUnit">
+            <input type="radio" name="Operator" id="CentiFUnit" value = "+"
+                   data-rule-required="true" data-msg-required="Operator is Required" />Centimeters
         </label>
         <label for="AddOperator">
-            <input type="radio" name="Operator" id="SubtractOperator" value = "-">-
+            <input type="radio" name="Operator" id="SubtractOperator" value = "-">Meters
         </label>
         <label for="AddOperator">
-            <input type="radio" name="Operator" id="MultiplyOperator" value = "*">*
+            <input type="radio" name="Operator" id="MultiplyOperator" value = "*">Kilometers
         </label>
         <label for="AddOperator">
-            <input type="radio" name="Operator" id="DivideOperator" value = "/">/
+            <input type="radio" name="Operator" id="DivideOperator" value = "/">Inches
+        </label>
+        <label for="AddOperator">
+            <input type="radio" name="Operator" id="DivideOperator" value = "/">Feet
+            <label for="AddOperator">
+                <input type="radio" name="Operator" id="DivideOperator" value = "/">Yards
+            </label>
+            <label for="AddOperator">
+                <input type="radio" name="Operator" id="DivideOperator" value = "/">Miles
+            </label>
         </label>
 <br> <br>
 <label class="formlabel">To Unit: </label>
@@ -48,5 +57,13 @@
 <label for="AddOperator">
     <input type="radio" name="Operator" id="DivideOperator" value = "/">/
 </label>
+<br><br>
+
+<label class="formlabel">To Value: </label>
+<span id="Result"></span>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+<script src="/unitsconversion/script/unit.js"></script>
 </body>
 </html>
