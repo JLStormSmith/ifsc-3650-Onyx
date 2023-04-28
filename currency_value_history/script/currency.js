@@ -1,8 +1,8 @@
-async function ShowResuts(){
+async function Results(){
     "use strict";
 
     //reference
-    var form =$("#myform");
+    var form = $("#myform");
 
     //validation 
     form.validate();
@@ -15,34 +15,56 @@ async function ShowResuts(){
         var ToDate = document.getElementById("ToDate").value;
 
         
-    }
+        var myURL2 = "https://api.polygon.io/v2/aggs/ticker/C:"  + BaseCurrency + ConvertCurrency + "/range/1/day/" + FromDate + "/" + ToDate + "?adjusted=true&sort=asc&limit=32&apiKey=" + apiKey;
+        var msg2Object = await fetch(myURL2);
 
-}
-function SelectExample() 
-{
-    document.getElementById("SelectExampleValue").innerHTML = document.getElementById("selAuto").value;
+        if (msg2Object.status >= 200 && msg2Object.status <= 299) {   
+            var msg2JSONText = await msg2Object.text();
 
-    var ctx = document.getElementById("chartjs-0");
+            var msg2 = JSON.parse(msg2JSONText);
 
-    var myChart = new Chart(ctx, {
-        "type":"line",
-        "data": {
-            "labels": dates,
-            "datasets":[{
-                "data": values,
-                fill: false
-            }]
-        },
+            var currencydate = [];
+            var currencyvalue = [];
+            
+            var numdays = msg2.results.length;
+            if (numdays > 0) {
+                for (var i = 0; i < numdays; i++) {
+                    currencyvalue[i] = msg2.results[i].c;
+                    var tempdate = new Date(msg2.results[i].t);
+                    currencydate[i] = tempdate.toLocaleDateString();
+                }
+        }
+
+
+
+
+var ctx0 = document.getElementById("chartjs-0");
+var myChart = new Chart(ctx0, {
+    "type":"line",
+    "data": {
+        "labels": currencydate,
+        "datasets":[{"label":"Currency Close",
+        "data": currencyvalue,
+        "fill":false,
+        "borderColor":"rgb(75, 192, 192)",
+        "lineTension":0.1}]},
         "options":{ 
             responsive: false,
             maintainAspectRatio: true,
         }
-    });
+    }
+);
 
+
+} else {
+    alert("Stock Not Found - Status: " + msg2Object.status)
+    return
+}
+}
 
 }
 
-function ClearForm() {
+function clearForm() {
     document.getElementById("BaseCurrency").value = "";
     document.getElementById("ConvertCurrency").value = "";
     document.getElementById("FromDate").value = "";

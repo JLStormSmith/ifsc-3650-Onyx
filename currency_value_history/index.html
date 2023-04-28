@@ -15,7 +15,7 @@
    }
 </style>
 </head>
-<form id="myform" onsubmit="return false">
+<form id="myform">
 <body>
     <h2>Currency Value History </h2>
 <label>Base Currency: </label>
@@ -47,17 +47,17 @@
 <span id="SelectExampleValue"></span>
 <input type="text" id="FromDate" name="FromDate" size="20" maxlength="20"
     data-rule-required="true"  data-msg-required="From Date is Required" >
-<label for="FromDateError" class="error"></label>
-<label id="DateValue"></label>
+<label for="FromDateError" for="FromDate" class="error"></label>
+
 <br>
 <br>
 <label>To Date: </label>
 <input type="text" id="ToDate" name="ToDate" size="20" maxlength="20"
     data-rule-required="true"  data-msg-required="To Date is Required" >
-<label for="ToDateError" class="error"></label>
+<label for="ToDateError" for="ToDate" class="error"></label>
 <label id="DateValue"></label>
 <br><br>
-<input type="submit" value="Show Results" name="ShowResults" onclick="ShowResults();">
+<input type="submit" value="Show Results" name="ShowResults" onclick="Results();">
 <input type="button" value="Clear" id="btnSubmit" name="Clear" onclick="clearform();" >
 <br>
 <br>
