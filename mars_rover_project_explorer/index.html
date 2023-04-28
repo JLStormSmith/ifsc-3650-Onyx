@@ -6,34 +6,63 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
-    <script src="/unitsconversion/script/unit.js"></script>
+    <script src="/mars_rover_project_explorer/asset/mars.js"></script>
+    <meta name="author" content="Johnnie Smith">
 
 </head>
 <body>
+    <form id="myform">
     <h3>Mars Rover Photo Explorer</h3>
 
-
+    <table>
+        <tr>
+            <th>Rover</th>
+            <th>Mission Start</th>
+            <th>Mission End</th>
+        </tr>
+        <tr>
+            <td>Curiosity</td>
+            <td>08/06/2012</td>
+            <td>09/28/2019</td>
+        </tr>
+        <tr>
+            <td>Opportunity</td>
+            <td>01/26/2004</td>
+            <td>06/11/2016</td>
+        </tr>
+        <tr>
+            <td>Spirit</td>
+            <td>01/05/2004</td>
+            <td>03/21/2004</td>
+        </tr>
+    </table>
     <h2> Select a rover and a picture date: </h2>
-    <label class="formlabel">Rover:  </label>
-<label for="RoverUnit">
-            <input type="radio" name="RoverUnit" id="CuriosityRoverUnit" value = "curiosity"
+    <label >Rover:  </label>
+<label for="Curiosity">
+            <input type="radio" onchange="getCuriosity()" name="Rover" id="CuriosityRover" value = "Curiosity"
                    data-rule-required="true" data-msg-required="Rover is Required" />Curiosity
         </label>
-        <label for="RoverUnit">
-            <input type="radio" name="Operator" id="OpportunityRoverUnit" value = "opportunity">Opportunity
+        <label for="Opportunity">
+            <input type="radio" onchange="getOpportunity()" name="Rover" id="OpportunityRover" value = "Opportunity">Opportunity
         </label>
-        <label for="RoverUnit">
-            <input type="radio" name="Operator" id="MultiplyOperator" value = "*">Spirit
+        <label for="Spirit">
+            <input type="radio" onchange="getSpirit()" name="Rover" id="SpiritRover" value = "Spirit">Spirit
         </label>
+
+        <label for="Rover" class="error"></label>
 <br> <br>
 
-<label class="formlabel" for="Operand2">Operand 2: </label>
-    <input type="text" id="Operand2" name="Operand2" size="15" maxlength="15"
-            data-rule-required="true"  data-msg-required="Operand 2 is Required" 
+<label class="formlabel" >Picture Date: </label>
+    <input type="date" id="Date" name="Date" size="15" maxlength="15"
+            data-rule-required="true"  data-msg-required="Picture Date is Required" 
             data-rule-number="true" data-msg-number="Operand 2 must be a Number">
-    <label for="Operand2" class="error" id="Operand2Msg"></label>
+    <label id="DateError" class="error" for="Date"></label>
 <br> <br>
 
         <input type="button" value="Search" name="Search" onclick="search();">
     <input type="button" value="Clear" name="Clear" onclick="clearform();">
+    <div id="galleryContainer"></div>
+    </form>
 </body>
+
+</html>
