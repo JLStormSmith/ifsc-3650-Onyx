@@ -19,50 +19,58 @@
 <body>
     <h2>Currency Value History </h2>
 <label>Base Currency: </label>
-<select name="selCurrency" id="Currency"                
+<select name="BaseCurrency" id="BaseCurrency"                
         data-rule-required="true" data-msg-required="Currency is Required">
     <option value="">Select a Currency...</option>
     <option value="USD">USD </option>
-    <option value="Yen">Yen</option>
-    <option value="Pound">Pound </option>
-    <option value="Euro">Euro </option>
-    <option value="Pesos">Pesos </option>
+    <option value="JPY">Yen</option>
+    <option value="GBP">Pound </option>
+    <option value="EUR">Euro </option>
+    <option value="MXN">Pesos </option>
 </select>
+<label for="BaseCurrency" class="error"></label>
 <br> </br>
 <label>Convert to Currency:  </label>
-<select name="selCurrency" id="Currency"                
+<select name="ConvertCurrency" id="ConvertCurrency"                
         data-rule-required="true" data-msg-required="Currency is Required">
     <option value="">Select a Currency...</option>
     <option value="USD">USD </option>
-    <option value="Yen">Yen</option>
-    <option value="Pound">Pound </option>
-    <option value="Euro">Euro </option>
-    <option value="Pesos">Pesos </option>
+    <option value="JPY">Yen</option>
+    <option value="GBP">Pound </option>
+    <option value="EUR">Euro </option>
+    <option value="MXN">Pesos </option>
 </select>
-<label for="selAuto" class="error"></label>
+<label for="ConvertCurrency" class="error"></label>
 <br>
 <br>
 <label>From Date: </label>
 <span id="SelectExampleValue"></span>
-<input type="text" id="txtName" name="txtName" size="20" maxlength="20"
+<input type="text" id="FromDate" name="FromDate" size="20" maxlength="20"
     data-rule-required="true"  data-msg-required="From Date is Required" >
-<label for="txtName" class="error"></label>
+<label for="FromDateError" class="error"></label>
 <label id="DateValue"></label>
 <br>
 <br>
 <label>To Date: </label>
-<input type="text" id="txtName" name="txtName" size="20" maxlength="20"
+<input type="text" id="ToDate" name="ToDate" size="20" maxlength="20"
     data-rule-required="true"  data-msg-required="To Date is Required" >
-<label for="txtName" class="error"></label>
+<label for="ToDateError" class="error"></label>
 <label id="DateValue"></label>
 <br><br>
-<input type="submit" value="Show Results" name="ShowResults" onclick="ShowResults()">
-<input type="button" value="Clear" id="btnSubmit" name="Clear" onclick="clearform()" formnovalidate>
+<input type="submit" value="Show Results" name="ShowResults" onclick="ShowResults();">
+<input type="button" value="Clear" id="btnSubmit" name="Clear" onclick="clearform();" >
+<br>
+<br>
 
+<div class="clearfix">
+    <div class="img-container">
+        <canvas id="chartjs-0" width="400" height="400"></canvas>
+    </div>
+</div>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
-<script src="/currency_value_history/script/calc.js"></script>
+<script src="/currency_value_history/script/currency.js"></script>
 </body>
 </html>

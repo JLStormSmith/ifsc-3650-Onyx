@@ -1,6 +1,6 @@
 
 function calculate() {
-    if ($( "#myform" ).valid()){
+    if ($( "#myForm" ).valid()){
 
         //gets the operands
         var operand1 = document.getElementById("Operand1").value;
@@ -34,6 +34,9 @@ function calculate() {
        }
        if(operator == "Mult"){
         result = operand1fp * operand2fp;
+       }
+       if(operator == "Div"){
+        result = operand1fp / operand2fp;
        }
         document.getElementById("Result").innerHTML= result.toString();
         
